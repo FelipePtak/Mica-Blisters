@@ -1,0 +1,14 @@
+run("Text Image... ", "open=[F:/Documentos/Felipe/PUC/DOUTORADO/Mica/MF-18/Setpoint 2/Text Matrices/Topography/MF-18-MultiLayer-2019.12.10-11.11.18-FWD.txt]");
+run("Text Image... ", "open=[F:/Documentos/Felipe/PUC/DOUTORADO/Mica/MF-18/Setpoint 2/Text Matrices/Topography/MF-18-MultiLayer-2019.12.10-11.11.18-BWD.txt]");
+selectWindow("MF-18-MultiLayer-2019.12.10-11.11.18-FWD.txt");
+run("Images to Stack", "name=Stack-Topo title=[] use");
+run("StackReg", "transformation=Translation");
+run("Stack to Images");
+selectWindow("MF-18-MultiLayer-2019.12.10-11.11.18-FWD");
+saveAs("Tiff", "F:/Documentos/Felipe/PUC/DOUTORADO/Mica/MF-18/Setpoint 2/Text Matrices/StackReg/MF-18-MultiLayer-2019.12.10-11.11.18-FWD-StackReg.tif");
+selectWindow("MF-18-MultiLayer-2019.12.10-11.11.18-BWD");
+saveAs("Tiff", "F:/Documentos/Felipe/PUC/DOUTORADO/Mica/MF-18/Setpoint 2/Text Matrices/StackReg/MF-18-MultiLayer-2019.12.10-11.11.18-BWD-StackReg.tif");
+selectWindow("MF-18-MultiLayer-2019.12.10-11.11.18-FWD-StackReg.tif");
+close();
+selectWindow("MF-18-MultiLayer-2019.12.10-11.11.18-BWD-StackReg.tif");
+close();
